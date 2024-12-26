@@ -1,4 +1,3 @@
-
 package com.aynisac.proyectoayni.persistencia;
 
 import com.aynisac.proyectoainy.logica.Cliente;
@@ -18,11 +17,11 @@ public class ClienteJpaController implements Serializable {
     public ClienteJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
-    
-    public ClienteJpaController(){
+
+    public ClienteJpaController() {
         emf = Persistence.createEntityManagerFactory("AyniPU");
     }
-    
+
     private EntityManagerFactory emf = null;
 
     public EntityManager getEntityManager() {
@@ -132,5 +131,5 @@ public class ClienteJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }
