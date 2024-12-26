@@ -10,6 +10,7 @@ public class ProyectoAyni {
         Principal princ = new Principal();
         princ.setVisible(true);
         princ.setLocationRelativeTo(null);
+	System.out.println("Hola");
         
     }
 }
