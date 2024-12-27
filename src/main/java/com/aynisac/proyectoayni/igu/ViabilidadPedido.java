@@ -119,7 +119,7 @@ public class ViabilidadPedido extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCargaDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargaDatosActionPerformed
-        CargaDatosViabilidad pantalla = new CargaDatosViabilidad();
+        CargaViabilidadPedido pantalla = new CargaViabilidadPedido();
         pantalla.setVisible(true);
         pantalla.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCargaDatosActionPerformed

@@ -51,7 +51,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnEditar" alignment="1" min="-2" pref="117" max="-2" attributes="0"/>
                       <Component id="btnEliminar" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnEditar1" alignment="1" min="-2" pref="117" max="-2" attributes="0"/>
+                      <Component id="btnEnviarExcel" alignment="1" min="-2" pref="117" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
@@ -76,7 +76,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnEditar" min="-2" pref="53" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnEditar1" min="-2" pref="53" max="-2" attributes="0"/>
+                          <Component id="btnEnviarExcel" min="-2" pref="53" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="51" max="32767" attributes="0"/>
@@ -182,7 +182,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnEditar1">
+        <Component class="javax.swing.JButton" name="btnEnviarExcel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="2" name="C:\NetBeansProject\recursos\Excel.jpg"/>
@@ -190,7 +190,7 @@
             <Property name="text" type="java.lang.String" value="Excel"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditar1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEnviarExcelActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

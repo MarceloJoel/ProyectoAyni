@@ -3,18 +3,20 @@ package com.aynisac.proyectoayni.igu;
 import com.aynisac.proyectoainy.logica.Cliente;
 import com.aynisac.proyectoayni.logica.Controladora;
 import java.util.List;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class VisualizacionPedido extends javax.swing.JFrame {
 
     //Se inicializa la clase en null xq es buena práctica
     Controladora control = null;
-    
+
     public VisualizacionPedido() {
         control = new Controladora();
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -27,7 +29,7 @@ public class VisualizacionPedido extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        btnEditar1 = new javax.swing.JButton();
+        btnEnviarExcel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -94,11 +96,11 @@ public class VisualizacionPedido extends javax.swing.JFrame {
             }
         });
 
-        btnEditar1.setIcon(new javax.swing.ImageIcon("C:\\NetBeansProject\\recursos\\Excel.jpg")); // NOI18N
-        btnEditar1.setText("Excel");
-        btnEditar1.addActionListener(new java.awt.event.ActionListener() {
+        btnEnviarExcel.setIcon(new javax.swing.ImageIcon("C:\\NetBeansProject\\recursos\\Excel.jpg")); // NOI18N
+        btnEnviarExcel.setText("Excel");
+        btnEnviarExcel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditar1ActionPerformed(evt);
+                btnEnviarExcelActionPerformed(evt);
             }
         });
 
@@ -113,7 +115,7 @@ public class VisualizacionPedido extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEditar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnEliminar, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnEditar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnEnviarExcel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -134,7 +136,7 @@ public class VisualizacionPedido extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnEditar1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnEnviarExcel, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
 
@@ -159,67 +161,62 @@ public class VisualizacionPedido extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-//        //Controlo que la tabla no este vacia
-//        if (tablaMascotas.getRowCount() > 0) {
-//            //Controlo que se haya seleccionado a una mascota
-//            if (tablaMascotas.getSelectedRow() != -1) {
-//                //Obtengo id de la mascota eliminar
-//                int num_cliente = Integer.parseInt(String.valueOf(tablaMascotas.getValueAt(tablaMascotas.getSelectedRow(), 0)));
-//                //Llamo al método eliminar
-//                control.borrarMascota(num_cliente);
-//                //Aviso al usuario que borró correctamente
-//                mostrarMensaje("Mascota eliminada correctamente", "Info", "Borrado de Mascota");
-//                cargarTabla();
-//            } else {
-//                mostrarMensaje("No selecciono ninguna mascota", "Error", "Error al eliminar");
-//            }
-//        } else {
-//            mostrarMensaje("No hay nada para eliminar en la tabla", "Error", "Error al eliminar");
-//        }
+        //Controlo que la tabla no este vacia
+        if (tablaClientes.getRowCount() > 0) {
+            //Controlo que se haya seleccionado una fila
+            if (tablaClientes.getSelectedRow() != -1) {
+                //Obtener el id para eliminar
+                int idCliente = Integer.parseInt(String.valueOf(tablaClientes.getValueAt(tablaClientes.getSelectedRow(), 0)));
+                //Llamar al metodo eliminar
+                control.borrarCliente(idCliente);
+                //Mensaje
+                mostrarMensaje("Cliente eliminado correctamente", "Info", "Borrado de Cliente");
+                cargarTabla();
+            } else {
+                mostrarMensaje("No selecciono ningún cliente", "Error", "Error al eliminar");
+            }
+        } else {
+            mostrarMensaje("No hay nada para eliminar en la tabla", "Error", "Error al eliminar");
+        }
+
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-//        //Controlo que la tabla no este vacia
-//        if (tablaMascotas.getRowCount() > 0) {
-//            //Controlo que se haya seleccionado a una mascota
-//            if (tablaMascotas.getSelectedRow() != -1) {
-//                //Obtengo id de la mascota eliminar
-//                int num_cliente = Integer.parseInt(String.valueOf(tablaMascotas.getValueAt(tablaMascotas.getSelectedRow(), 0)));
-//
-//                ModificarDatos pantallaModif = new ModificarDatos(num_cliente);
-//                pantallaModif.setVisible(true);
-//                pantallaModif.setLocationRelativeTo(null);
-//                
-//                this.dispose();
-//                
-//            } else {
-//                mostrarMensaje("No selecciono ninguna mascota", "Error", "Error al eliminar");
-//            }
-//        } else {
-//            mostrarMensaje("No hay nada para eliminar en la tabla", "Error", "Error al eliminar");
-//        }
+        if (tablaClientes.getRowCount() > 0) {
+            if (tablaClientes.getSelectedRow() != -1) {
+                int idCliente = Integer.parseInt(String.valueOf(tablaClientes.getValueAt(tablaClientes.getSelectedRow(), 0)));
+                ModifViabilidadPedido modif = new ModifViabilidadPedido(idCliente);
+                modif.setVisible(true);
+                modif.setLocationRelativeTo(null);
+                this.dispose();
+            } else {
+                mostrarMensaje("No selecciono ningún cliente", "Error", "Error al eliminar");
+            }
+        } else {
+            mostrarMensaje("No hay nada para eliminar en la tabla", "Error", "Error al eliminar");
+        }
     }//GEN-LAST:event_btnEditarActionPerformed
 
-    private void btnEditar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditar1ActionPerformed
+    private void btnEnviarExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarExcelActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEditar1ActionPerformed
-    
+    }//GEN-LAST:event_btnEnviarExcelActionPerformed
+
     public void mostrarMensaje(String mensaje, String tipo, String titulo) {
-//        JOptionPane optionPane = new JOptionPane(mensaje);
-//        if (tipo.equals("Info")) {
-//            optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
-//        } else if (tipo.equals("Error")) {
-//            optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
-//        }
-//        JDialog dialog = optionPane.createDialog(titulo);
-//        dialog.setAlwaysOnTop(true);
-//        dialog.setVisible(true);
+        JOptionPane optionPane = new JOptionPane(mensaje);
+        if (tipo.equals("Info")) {
+            optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+        } else if (tipo.equals("Error")) {
+            optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
+        }
+        JDialog dialog = optionPane.createDialog(titulo);
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditar;
-    private javax.swing.JButton btnEditar1;
     private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnEnviarExcel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -249,33 +246,13 @@ public class VisualizacionPedido extends javax.swing.JFrame {
             for (Cliente cliente : listaClientes) {
                 Object[] objeto = {cliente.getNum_cliente(), cliente.getNombre(), cliente.getPlano(),
                     cliente.getDetalle(), cliente.getVisTec(), cliente.getObservaciones()};
-                
+
                 modeloTabla.addRow(objeto);
             }
         }
 
         //Todos los valores se asignan a la tabla de la interfaz
         tablaClientes.setModel(modeloTabla);
-        
-    }
 
-//    private void cargarTabla() {
-//
-//        //Carga de los datos desde la base de datos
-//        List<Mascota> listaMascotas = control.traerMascotas();
-//
-//        //Recorrer la lista y mostrar cada uno de los elementos en la tabla
-//        if (listaMascotas != null) {
-//            for (Mascota masco : listaMascotas) {
-//                Object[] objeto = {masco.getNum_cliente(), masco.getNombre(), masco.getColor(), masco.getRaza(),
-//                    masco.getAlergico(), masco.getAtencion_especial(),
-//                    masco.getUnDuenio().getNombre(), masco.getUnDuenio().getCelDuenio()};
-//
-//                modeloTabla.addRow(objeto);
-//            }
-//        }
-//
-//        //Todos los valores se asignan a la tu JTable tablaMascotas:
-//        tablaMascotas.setModel(modeloTabla);
-//    }
+    }
 }
