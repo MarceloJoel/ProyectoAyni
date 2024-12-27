@@ -2,6 +2,8 @@ package com.aynisac.proyectoayni.igu;
 
 import com.aynisac.proyectoainy.logica.Cliente;
 import com.aynisac.proyectoayni.logica.Controladora;
+import com.aynisac.proyectoayni.logica.ExportarExcel;
+import java.io.IOException;
 import java.util.List;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
@@ -198,7 +200,14 @@ public class VisualizacionPedido extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEnviarExcelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarExcelActionPerformed
-        // TODO add your handling code here:
+        ExportarExcel obj;
+
+        try {
+            obj = new ExportarExcel();
+            obj.exportarExcel(tablaClientes);
+        } catch (IOException ex) {
+            System.out.println("Error: " + ex);
+        }
     }//GEN-LAST:event_btnEnviarExcelActionPerformed
 
     public void mostrarMensaje(String mensaje, String tipo, String titulo) {
