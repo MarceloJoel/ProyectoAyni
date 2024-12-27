@@ -1,5 +1,7 @@
 package com.aynisac.proyectoayni.igu;
 
+import javax.swing.JFrame;
+
 public class ViabilidadPedido extends javax.swing.JFrame {
 
     public ViabilidadPedido() {
@@ -88,7 +90,7 @@ public class ViabilidadPedido extends javax.swing.JFrame {
                         .addGap(45, 45, 45))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(56, 56, 56))))
+                        .addGap(63, 63, 63))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,12 +122,14 @@ public class ViabilidadPedido extends javax.swing.JFrame {
 
     private void btnCargaDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargaDatosActionPerformed
         CargaViabilidadPedido pantalla = new CargaViabilidadPedido();
+        pantalla.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pantalla.setVisible(true);
         pantalla.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnCargaDatosActionPerformed
 
     private void btnVerDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDatosActionPerformed
         VisualizacionPedido pantalla = new VisualizacionPedido();
+        pantalla.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         pantalla.setVisible(true);
         pantalla.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnVerDatosActionPerformed

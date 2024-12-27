@@ -1,15 +1,19 @@
 package com.aynisac.proyectoayni.igu;
 
+import javax.swing.JFrame;
+
 public class Principal extends javax.swing.JFrame {
 
     public Principal() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        desktopPane = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -24,10 +28,14 @@ public class Principal extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\NetBeansProject\\ProyectoAyni\\src\\main\\java\\com\\aynisac\\proyectoayni\\icono\\portada.jpg")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        desktopPane.add(jLabel1);
+        jLabel1.setBounds(0, 0, 800, 520);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\NetBeansProject\\ProyectoAyni\\src\\main\\java\\com\\aynisac\\proyectoayni\\icono\\logoAyni_horizontal.png")); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, -1, -1));
+        desktopPane.add(jLabel2);
+        jLabel2.setBounds(0, 510, 800, 120);
+
+        getContentPane().add(desktopPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 650));
 
         jMenu1.setIcon(new javax.swing.ImageIcon("C:\\NetBeansProject\\recursos\\BotonMenu.png")); // NOI18N
 
@@ -71,11 +79,14 @@ public class Principal extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
+        getAccessibleContext().setAccessibleDescription("");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void mniViabilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniViabilidadActionPerformed
         ViabilidadPedido frmViabilidad = new ViabilidadPedido();
+        frmViabilidad.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frmViabilidad.setVisible(true);
         frmViabilidad.setLocationRelativeTo(null);
     }//GEN-LAST:event_mniViabilidadActionPerformed
@@ -86,6 +97,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void mniOCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniOCActionPerformed
         CumplimientoOC frmCumplimientoOC = new CumplimientoOC();
+        frmCumplimientoOC.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frmCumplimientoOC.setVisible(true);
         frmCumplimientoOC.setLocationRelativeTo(null);
     }//GEN-LAST:event_mniOCActionPerformed
@@ -96,6 +108,7 @@ public class Principal extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
@@ -105,4 +118,5 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mniPresupuesto;
     private javax.swing.JMenuItem mniViabilidad;
     // End of variables declaration//GEN-END:variables
+
 }

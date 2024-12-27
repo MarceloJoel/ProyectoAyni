@@ -3,6 +3,7 @@ package com.aynisac.proyectoayni.igu;
 import com.aynisac.proyectoainy.logica.Cliente;
 import com.aynisac.proyectoayni.logica.Controladora;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class ModifViabilidadPedido extends javax.swing.JFrame {
@@ -206,6 +207,7 @@ public class ModifViabilidadPedido extends javax.swing.JFrame {
         mostrarMensaje("Edición realizada correctamente", "Info", "Edición exitosa");
 
         VisualizacionPedido visualizacion = new VisualizacionPedido();
+        visualizacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         visualizacion.setVisible(true);
         visualizacion.setLocationRelativeTo(null);
         this.dispose();
