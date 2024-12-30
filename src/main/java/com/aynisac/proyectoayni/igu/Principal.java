@@ -92,7 +92,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_mniViabilidadActionPerformed
 
     private void mniPresupuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniPresupuestoActionPerformed
-
+        RevisarAceptarPresupuesto frmPresupuesto = new RevisarAceptarPresupuesto();
+        frmPresupuesto.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frmPresupuesto.setVisible(true);
+        frmPresupuesto.setLocationRelativeTo(null);
     }//GEN-LAST:event_mniPresupuestoActionPerformed
 
     private void mniOCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniOCActionPerformed
