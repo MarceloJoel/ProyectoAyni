@@ -183,6 +183,7 @@ public class VisualizacionPresupuesto extends javax.swing.JFrame {
                 int idCliente = Integer.parseInt(String.valueOf(tablaClientesPresupuesto.getValueAt(tablaClientesPresupuesto.getSelectedRow(), 0)));
                 //Entramos a su modificacion
                 ModifPresupuesto modif = new ModifPresupuesto(idCliente);
+                modif.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
                 modif.setVisible(true);
                 modif.setLocationRelativeTo(null);
                 this.dispose();

@@ -4,6 +4,7 @@
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>com.aynisac.proyectoainy.logica.Cliente</class>
     <class>com.aynisac.proyectoayni.logica.ClientePresupuesto</class>
+    <class>com.aynisac.proyectoayni.logica.ClienteOrdenCompra</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/proyecto_ayni?serverTimezone=UTC"/>
       <property name="javax.persistence.jdbc.user" value="root"/>

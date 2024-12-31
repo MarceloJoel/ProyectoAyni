@@ -1,6 +1,6 @@
 package com.aynisac.proyectoayni.igu;
 
-import com.aynisac.proyectoainy.logica.Cliente;
+import com.aynisac.proyectoayni.logica.ClienteOrdenCompra;
 import com.aynisac.proyectoayni.logica.Controladora;
 import com.aynisac.proyectoayni.logica.ExportarExcel;
 import java.io.IOException;
@@ -9,12 +9,11 @@ import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class VisualizacionPedido extends javax.swing.JFrame {
+public class VisualizacionOC extends javax.swing.JFrame {
 
-    //Se inicializa la clase en null xq es buena práctica
     Controladora control = null;
 
-    public VisualizacionPedido() {
+    public VisualizacionOC() {
         control = new Controladora();
         initComponents();
     }
@@ -27,7 +26,7 @@ public class VisualizacionPedido extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaClientes = new javax.swing.JTable();
+        tablaClientesOC = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
@@ -41,11 +40,11 @@ public class VisualizacionPedido extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel1.setText("Visualización de Pedidos");
+        jLabel1.setText("Visualización Orden de Compra");
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
+        tablaClientesOC.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -56,7 +55,7 @@ public class VisualizacionPedido extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(tablaClientes);
+        jScrollPane1.setViewportView(tablaClientesOC);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Datos de empresa:");
@@ -122,14 +121,14 @@ public class VisualizacionPedido extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(122, 122, 122))
+                .addGap(61, 61, 61))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel1)
-                .addGap(28, 28, 28)
+                .addGap(32, 32, 32)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -159,21 +158,16 @@ public class VisualizacionPedido extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        cargarTabla();
+        cargarTablaOC();
     }//GEN-LAST:event_formWindowOpened
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        //Controlo que la tabla no este vacia
-        if (tablaClientes.getRowCount() > 0) {
-            //Controlo que se haya seleccionado una fila
-            if (tablaClientes.getSelectedRow() != -1) {
-                //Obtener el id para eliminar
-                int idCliente = Integer.parseInt(String.valueOf(tablaClientes.getValueAt(tablaClientes.getSelectedRow(), 0)));
-                //Llamar al metodo eliminar
-                control.borrarCliente(idCliente);
-                //Mensaje
+        if (tablaClientesOC.getRowCount() > 0) {
+            if (tablaClientesOC.getSelectedRow() != -1) {
+                int idCliente = Integer.parseInt(String.valueOf(tablaClientesOC.getValueAt(tablaClientesOC.getSelectedRow(), 0)));
+                control.borrarClienteOC(idCliente);
                 mostrarMensaje("Cliente eliminado correctamente", "Info", "Borrado de Cliente");
-                cargarTabla();
+                cargarTablaOC();
             } else {
                 mostrarMensaje("No selecciono ningún cliente", "Error", "Error al eliminar");
             }
@@ -184,10 +178,10 @@ public class VisualizacionPedido extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        if (tablaClientes.getRowCount() > 0) {
-            if (tablaClientes.getSelectedRow() != -1) {
-                int idCliente = Integer.parseInt(String.valueOf(tablaClientes.getValueAt(tablaClientes.getSelectedRow(), 0)));
-                ModifViabilidadPedido modif = new ModifViabilidadPedido(idCliente);
+        if (tablaClientesOC.getRowCount() > 0) {
+            if (tablaClientesOC.getSelectedRow() != -1) {
+                int idCliente = Integer.parseInt(String.valueOf(tablaClientesOC.getValueAt(tablaClientesOC.getSelectedRow(), 0)));
+                ModifOC modif = new ModifOC(idCliente);
                 modif.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
                 modif.setVisible(true);
                 modif.setLocationRelativeTo(null);
@@ -205,7 +199,7 @@ public class VisualizacionPedido extends javax.swing.JFrame {
 
         try {
             obj = new ExportarExcel();
-            obj.exportarExcel(tablaClientes);
+            obj.exportarExcel(tablaClientesOC);
         } catch (IOException ex) {
             System.out.println("Error: " + ex);
         }
@@ -232,37 +226,31 @@ public class VisualizacionPedido extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tablaClientes;
+    private javax.swing.JTable tablaClientesOC;
     // End of variables declaration//GEN-END:variables
 
-    private void cargarTabla() {
+    private void cargarTablaOC() {
         DefaultTableModel modeloTabla = new DefaultTableModel() {
-            //filas y columnas no tienen que ser editables
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
         };
 
-        //Establecer nombres en las columnas
-        String titulos[] = {"Num", "Cliente", "Plano", "Detalle", "Vis. Técnica", "Observación"};
-        modeloTabla.setColumnIdentifiers(titulos);
+        String tituloOC[] = {"Num", "Cliente", "Tiempo Acordado", "Atraso", "Observaciones"};
+        modeloTabla.setColumnIdentifiers(tituloOC);
 
-        //Carga los datos de la BD
-        List<Cliente> listaClientes = control.traerClientes();
+        List<ClienteOrdenCompra> listaClientesOC = control.traerClienteOC();
 
-        //Recorrer la lista y mostrar cada uno de los elementos en la tabla
-        if (listaClientes != null) {
-            for (Cliente cliente : listaClientes) {
-                Object[] objeto = {cliente.getNum_cliente(), cliente.getNombre(), cliente.getPlano(),
-                    cliente.getDetalle(), cliente.getVisTec(), cliente.getObservaciones()};
+        if (listaClientesOC != null) {
+            for (ClienteOrdenCompra clienteOC : listaClientesOC) {
+                Object[] objeto = {clienteOC.getNum_cliente(), clienteOC.getNombreEmp(), clienteOC.getTiempo(),
+                    clienteOC.getAtraso(), clienteOC.getObservacion()};
 
                 modeloTabla.addRow(objeto);
             }
         }
 
-        //Todos los valores se asignan a la tabla de la interfaz
-        tablaClientes.setModel(modeloTabla);
-
+        tablaClientesOC.setModel(modeloTabla);
     }
 }

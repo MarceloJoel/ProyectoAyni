@@ -83,4 +83,41 @@ public class Controladora {
         
         controlPersis.modificarClientePresupuesto(cliente);
     }
+
+    //Codigo para Orden de Compra
+    public void guardarOC(String nombreEmp, String tiempoAcor, String atraso, String observacion) {
+        
+        ClienteOrdenCompra cliente = new ClienteOrdenCompra();
+        cliente.setNombreEmp(nombreEmp);
+        cliente.setTiempo(tiempoAcor);
+        cliente.setAtraso(atraso);
+        cliente.setObservacion(observacion);
+        
+        controlPersis.guardarOC(cliente);
+    }
+
+    public List<ClienteOrdenCompra> traerClienteOC() {
+        return controlPersis.traerClienteOC();
+    }
+
+    public void borrarClienteOC(int idCliente) {
+        controlPersis.borrarClienteOC(idCliente);
+    }
+
+    public ClienteOrdenCompra traerClienteOC(int idCliente) {
+        return controlPersis.traerClienteOC(idCliente);
+    }
+
+    public void modificarClienteOC(ClienteOrdenCompra clienteOC, String nombreEmp, String tiempo, String atraso, String observacion) {
+        ClienteOrdenCompra cliente = new ClienteOrdenCompra();
+        cliente.setNombreEmp(nombreEmp);
+        cliente.setTiempo(tiempo);
+        cliente.setAtraso(atraso);
+        cliente.setObservacion(observacion);
+        
+        controlPersis.modificarClienteOC(cliente);
+        
+    }
+    
+    
 }

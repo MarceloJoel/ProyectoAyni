@@ -1,8 +1,10 @@
 com\aynisac\proyectoayni\igu\VisualizacionPedido$3.class
 com\aynisac\proyectoainy\logica\Cliente.class
+com\aynisac\proyectoayni\igu\VisualizacionOC$3.class
 com\aynisac\proyectoayni\igu\CumplimientoOC$2.class
 com\aynisac\proyectoayni\igu\VisualizacionPresupuesto$5.class
 com\aynisac\proyectoayni\persistencia\ClienteJpaController.class
+com\aynisac\proyectoayni\igu\ModifOC$1.class
 com\aynisac\proyectoayni\igu\ModifPresupuesto.class
 com\aynisac\proyectoayni\igu\CargaPresupuesto$2.class
 com\aynisac\proyectoayni\igu\VisualizacionPedido.class
@@ -14,7 +16,10 @@ com\aynisac\proyectoayni\igu\CargaDatosCumplimientoOC.class
 com\aynisac\proyectoayni\igu\ModifViabilidadPedido$2.class
 com\aynisac\proyectoayni\igu\Principal$2.class
 com\aynisac\proyectoayni\igu\ViabilidadPedido$2.class
+com\aynisac\proyectoayni\persistencia\ClienteOrdenCompraJpaController.class
 com\aynisac\proyectoayni\igu\VisualizacionPresupuesto$2.class
+com\aynisac\proyectoayni\igu\VisualizacionOC$4.class
+com\aynisac\proyectoayni\logica\ClienteOrdenCompra_.class
 com\aynisac\proyectoayni\igu\CumplimientoOC$1.class
 com\aynisac\proyectoayni\igu\Principal$3.class
 com\aynisac\proyectoayni\igu\CargaPresupuesto$1.class
@@ -27,6 +32,7 @@ com\aynisac\proyectoayni\igu\ModifPresupuesto$2.class
 com\aynisac\proyectoayni\igu\RevisarAceptarPresupuesto$1.class
 com\aynisac\proyectoayni\igu\ModifViabilidadPedido.class
 com\aynisac\proyectoayni\igu\ViabilidadPedido$1.class
+com\aynisac\proyectoayni\igu\VisualizacionOC$1.class
 com\aynisac\proyectoayni\logica\Controladora.class
 com\aynisac\proyectoayni\persistencia\ControladoraPersistencia.class
 com\aynisac\proyectoayni\igu\CargaDatosCumplimientoOC$1.class
@@ -37,6 +43,7 @@ com\aynisac\proyectoayni\ProyectoAyni.class
 com\aynisac\proyectoayni\igu\CargaViabilidadPedido.class
 com\aynisac\proyectoayni\igu\RevisarAceptarPresupuesto$2.class
 com\aynisac\proyectoayni\igu\ViabilidadPedido$3.class
+com\aynisac\proyectoayni\igu\VisualizacionOC$5.class
 com\aynisac\proyectoayni\igu\RevisarAceptarPresupuesto.class
 com\aynisac\proyectoayni\igu\VisualizacionPedido$5.class
 com\aynisac\proyectoayni\persistencia\exceptions\NonexistentEntityException.class
@@ -46,13 +53,18 @@ com\aynisac\proyectoayni\igu\VisualizacionPresupuesto.class
 com\aynisac\proyectoayni\igu\CargaDatosViabilidad.class
 com\aynisac\proyectoayni\igu\CargaDatosViabilidad$2.class
 com\aynisac\proyectoayni\igu\Principal$4.class
+com\aynisac\proyectoayni\igu\CumplimientoOC$3.class
+com\aynisac\proyectoayni\igu\ModifOC$2.class
+com\aynisac\proyectoayni\igu\ModifOC.class
 com\aynisac\proyectoayni\persistencia\ClientePresupuestoJpaController.class
 com\aynisac\proyectoainy\logica\Cliente_.class
 com\aynisac\proyectoayni\igu\RevisarAceptarPresupuesto$3.class
 com\aynisac\proyectoayni\logica\ClienteOrdenCompra.class
 com\aynisac\proyectoayni\igu\VisualizacionPedido$4.class
 com\aynisac\proyectoayni\igu\CumplimientoOC.class
+com\aynisac\proyectoayni\igu\VisualizacionOC.class
 com\aynisac\proyectoayni\igu\VisualizacionPedido$2.class
+com\aynisac\proyectoayni\igu\VisualizacionOC$2.class
 com\aynisac\proyectoayni\igu\VisualizacionPresupuesto$3.class
 com\aynisac\proyectoayni\igu\CargaViabilidadPedido$1.class
 com\aynisac\proyectoayni\igu\ModifPresupuesto$1.class

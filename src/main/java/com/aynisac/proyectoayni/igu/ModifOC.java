@@ -1,16 +1,20 @@
 package com.aynisac.proyectoayni.igu;
 
+import com.aynisac.proyectoayni.logica.ClienteOrdenCompra;
 import com.aynisac.proyectoayni.logica.Controladora;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class CargaDatosCumplimientoOC extends javax.swing.JFrame {
+public class ModifOC extends javax.swing.JFrame {
 
-    Controladora control = new Controladora();
+    Controladora control = null;
+    ClienteOrdenCompra clienteOC = new ClienteOrdenCompra();
 
-    public CargaDatosCumplimientoOC() {
-        //control = new Controladora();
+    public ModifOC(int idCliente) {
+        control = new Controladora();
         initComponents();
+        cargaDatosOC(idCliente);
     }
 
     @SuppressWarnings("unchecked")
@@ -30,13 +34,13 @@ public class CargaDatosCumplimientoOC extends javax.swing.JFrame {
         cmbAtraso = new javax.swing.JComboBox<>();
         txtTiempo = new javax.swing.JTextField();
         btnLimpiar = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
-        jLabel1.setText("Carga de Datos");
+        jLabel1.setText("Modificación de Datos");
 
         jLabel3.setText("Empresa:");
 
@@ -110,11 +114,11 @@ public class CargaDatosCumplimientoOC extends javax.swing.JFrame {
             }
         });
 
-        btnGuardar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        btnGuardar.setText("Guardar");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        btnModificar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnModificar.setText("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btnModificarActionPerformed(evt);
             }
         });
 
@@ -127,20 +131,20 @@ public class CargaDatosCumplimientoOC extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(127, 127, 127)
+                        .addGap(134, 134, 134)
                         .addComponent(btnLimpiar)
-                        .addGap(68, 68, 68)
-                        .addComponent(btnGuardar))
+                        .addGap(45, 45, 45)
+                        .addComponent(btnModificar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel7)))
-                .addContainerGap(51, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(146, 146, 146))
+                        .addGap(96, 96, 96)
+                        .addComponent(jLabel1)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(27, 27, 27))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,13 +152,13 @@ public class CargaDatosCumplimientoOC extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiar)
-                    .addComponent(btnGuardar))
+                    .addComponent(btnModificar))
                 .addContainerGap(59, Short.MAX_VALUE))
         );
 
@@ -183,26 +187,27 @@ public class CargaDatosCumplimientoOC extends javax.swing.JFrame {
         txtObservacion.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
         String nombreEmp = txtNombre.getText();
-        String tiempoAcor = txtTiempo.getText();
+        String tiempo = txtTiempo.getText();
         String atraso = (String) cmbAtraso.getSelectedItem();
         String observacion = txtObservacion.getText();
 
-        control.guardarOC(nombreEmp, tiempoAcor, atraso, observacion);
+        control.modificarClienteOC(clienteOC, nombreEmp, tiempo, atraso, observacion);
 
-        JOptionPane optionPane = new JOptionPane("Se guardo correctamente");
-        optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
-        JDialog dialog = optionPane.createDialog("Guardado Exitoso");
-        dialog.setAlwaysOnTop(true);
-        dialog.setVisible(true);
+        mostrarMensaje("Edición realizada correctamente", "Info", "Edición exitosa");
 
-    }//GEN-LAST:event_btnGuardarActionPerformed
+        VisualizacionOC visualizacion = new VisualizacionOC();
+        visualizacion.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        visualizacion.setVisible(true);
+        visualizacion.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_btnModificarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnModificar;
     private javax.swing.JComboBox<String> cmbAtraso;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -217,4 +222,33 @@ public class CargaDatosCumplimientoOC extends javax.swing.JFrame {
     private javax.swing.JTextArea txtObservacion;
     private javax.swing.JTextField txtTiempo;
     // End of variables declaration//GEN-END:variables
+
+    private void cargaDatosOC(int idCliente) {
+        clienteOC = control.traerClienteOC(idCliente);
+
+        txtNombre.setText(clienteOC.getNombreEmp());
+        txtTiempo.setText(clienteOC.getTiempo());
+
+        if (clienteOC.getAtraso().equals("SI")) {
+            cmbAtraso.setSelectedIndex(1);
+        } else if (clienteOC.getAtraso().equals("NO")) {
+            cmbAtraso.setSelectedIndex(2);
+        } else if (clienteOC.getAtraso().equals("En ejecución")) {
+            cmbAtraso.setSelectedIndex(3);
+        }
+
+        txtObservacion.setText(clienteOC.getObservacion());
+    }
+
+    private void mostrarMensaje(String mensaje, String tipo, String titulo) {
+        JOptionPane optionPane = new JOptionPane(mensaje);
+        if (tipo.equals("Info")) {
+            optionPane.setMessageType(JOptionPane.INFORMATION_MESSAGE);
+        } else if (tipo.equals("Error")) {
+            optionPane.setMessageType(JOptionPane.ERROR_MESSAGE);
+        }
+        JDialog dialog = optionPane.createDialog(titulo);
+        dialog.setAlwaysOnTop(true);
+        dialog.setVisible(true);
+    }
 }

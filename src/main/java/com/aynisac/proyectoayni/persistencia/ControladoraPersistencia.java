@@ -1,6 +1,7 @@
 package com.aynisac.proyectoayni.persistencia;
 
 import com.aynisac.proyectoainy.logica.Cliente;
+import com.aynisac.proyectoayni.logica.ClienteOrdenCompra;
 import com.aynisac.proyectoayni.logica.ClientePresupuesto;
 import com.aynisac.proyectoayni.persistencia.exceptions.NonexistentEntityException;
 import java.util.List;
@@ -11,6 +12,7 @@ public class ControladoraPersistencia {
 
     ClienteJpaController clienteJpa = new ClienteJpaController();
     ClientePresupuestoJpaController clientePresupuestoJpa = new ClientePresupuestoJpaController();
+    ClienteOrdenCompraJpaController clienteOCJpa = new ClienteOrdenCompraJpaController();
 
     public void guardar(Cliente cliente) {
         //Creamos el cliente en la BD
@@ -66,6 +68,35 @@ public class ControladoraPersistencia {
     public void modificarClientePresupuesto(ClientePresupuesto cliente) {
         try {
             clientePresupuestoJpa.edit(cliente);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    //Codigo para Orden de Compra
+    public void guardarOC(ClienteOrdenCompra cliente) {
+        clienteOCJpa.create(cliente);
+    }
+
+    public List<ClienteOrdenCompra> traerClienteOC() {
+        return clienteOCJpa.findClienteOrdenCompraEntities();
+    }
+
+    public void borrarClienteOC(int idCliente) {
+        try {
+            clienteOCJpa.destroy(idCliente);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public ClienteOrdenCompra traerClienteOC(int idCliente) {
+        return clienteOCJpa.findClienteOrdenCompra(idCliente);
+    }
+
+    public void modificarClienteOC(ClienteOrdenCompra cliente) {
+        try {
+            clienteOCJpa.edit(cliente);
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }
