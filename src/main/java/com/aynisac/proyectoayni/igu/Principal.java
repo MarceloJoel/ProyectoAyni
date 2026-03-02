@@ -34,7 +34,6 @@ public class Principal extends javax.swing.JFrame {
         mnuOC = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         mniExit = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -122,10 +121,12 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu2);
 
-        jMenu3.setText("Edit");
-        jMenuBar2.add(jMenu3);
-
         jMenu4.setText("Help");
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
         jMenuBar2.add(jMenu4);
 
         setJMenuBar(jMenuBar2);
@@ -185,6 +186,21 @@ public class Principal extends javax.swing.JFrame {
         frmCumplimientoOC.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnOCActionPerformed
 
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        // TODO add your handling code here:
+        String mensaje = "<html><body style='width: 250px; padding: 10px;'>" +
+                     "<h2 style='color: #2E7D32;'>Ayni SAC</h2>" +
+                     "<p><b>Versión:</b> 1.0.4 (2026)</p>" +
+                     "<p><b>Desarrollado por:</b> Marcelo/Departamento de Software</p>" +
+                     "<hr>" +
+                     "<p style='font-size: 9px;'>© 2026 Ayni SAC. Todos los derechos reservados de su creador.<br>" +
+                     "El uso no autorizado de este software está prohibido.</p>" +
+                     "<p style='font-size: 10px; color: gray; text-align: center;'><i>'Credendo Vides'</i></p>" +
+                     "</body></html>";
+
+    javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Acerca del Sistema", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jMenu4MouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnOC;
@@ -195,7 +211,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;

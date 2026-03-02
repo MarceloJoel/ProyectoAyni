@@ -48,10 +48,10 @@
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jPanel2" max="32767" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnEditar" alignment="1" min="-2" pref="117" max="-2" attributes="0"/>
-                      <Component id="btnEliminar" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnEnviarExcel" alignment="1" min="-2" pref="117" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btnEditar" alignment="1" max="32767" attributes="0"/>
+                      <Component id="btnEnviarExcel" alignment="1" max="32767" attributes="0"/>
+                      <Component id="btnEliminar" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
@@ -163,7 +163,7 @@
         <Component class="javax.swing.JButton" name="btnEditar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\NetBeansProject\recursos\editar.png"/>
+              <Image iconType="2" name="D:\ProyectoAyni\src\main\java\com\aynisac\proyectoayni\icono\editar.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Editar"/>
           </Properties>
@@ -174,7 +174,7 @@
         <Component class="javax.swing.JButton" name="btnEliminar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\NetBeansProject\recursos\limpiar.png"/>
+              <Image iconType="2" name="D:\ProyectoAyni\src\main\java\com\aynisac\proyectoayni\icono\limpiar.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Eliminar"/>
           </Properties>
@@ -185,7 +185,7 @@
         <Component class="javax.swing.JButton" name="btnEnviarExcel">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\NetBeansProject\ProyectoAyni\src\main\java\com\aynisac\proyectoayni\icono\Excel.jpeg"/>
+              <Image iconType="2" name="D:\ProyectoAyni\src\main\java\com\aynisac\proyectoayni\icono\Excel.jpeg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Excel"/>
           </Properties>
