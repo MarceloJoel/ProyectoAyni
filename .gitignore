@@ -1,3 +1,17 @@
-/target
-*.class
-target/classes/com/aynisac/proyectoayni/ProyectoAyni.class
+# Maven - Archivos temporales de compilación
+target/
+
+# NetBeans - Archivos específicos del IDE
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
