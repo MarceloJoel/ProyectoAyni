@@ -10,6 +10,7 @@ com\aynisac\proyectoayni\igu\CargaPresupuesto$2.class
 com\aynisac\proyectoayni\igu\VisualizacionPedido.class
 com\aynisac\proyectoayni\igu\CargaDatosCumplimientoOC$2.class
 com\aynisac\proyectoayni\igu\Principal.class
+com\aynisac\proyectoayni\igu\Principal$5.class
 com\aynisac\proyectoayni\igu\CargaDatosViabilidad$1.class
 com\aynisac\proyectoayni\logica\ExportarExcel.class
 com\aynisac\proyectoayni\igu\CargaDatosCumplimientoOC.class
@@ -19,7 +20,6 @@ com\aynisac\proyectoayni\igu\ViabilidadPedido$2.class
 com\aynisac\proyectoayni\persistencia\ClienteOrdenCompraJpaController.class
 com\aynisac\proyectoayni\igu\VisualizacionPresupuesto$2.class
 com\aynisac\proyectoayni\igu\VisualizacionOC$4.class
-com\aynisac\proyectoayni\logica\ClienteOrdenCompra_.class
 com\aynisac\proyectoayni\igu\CumplimientoOC$1.class
 com\aynisac\proyectoayni\igu\Principal$3.class
 com\aynisac\proyectoayni\igu\CargaPresupuesto$1.class
@@ -37,7 +37,7 @@ com\aynisac\proyectoayni\logica\Controladora.class
 com\aynisac\proyectoayni\persistencia\ControladoraPersistencia.class
 com\aynisac\proyectoayni\igu\CargaDatosCumplimientoOC$1.class
 com\aynisac\proyectoayni\igu\ModifViabilidadPedido$1.class
-com\aynisac\proyectoayni\logica\ClientePresupuesto_.class
+com\aynisac\proyectoayni\igu\Principal$6.class
 com\aynisac\proyectoayni\logica\ClientePresupuesto.class
 com\aynisac\proyectoayni\ProyectoAyni.class
 com\aynisac\proyectoayni\igu\CargaViabilidadPedido.class
@@ -57,13 +57,14 @@ com\aynisac\proyectoayni\igu\CumplimientoOC$3.class
 com\aynisac\proyectoayni\igu\ModifOC$2.class
 com\aynisac\proyectoayni\igu\ModifOC.class
 com\aynisac\proyectoayni\persistencia\ClientePresupuestoJpaController.class
-com\aynisac\proyectoainy\logica\Cliente_.class
+com\aynisac\proyectoayni\igu\Principal$7.class
 com\aynisac\proyectoayni\igu\RevisarAceptarPresupuesto$3.class
 com\aynisac\proyectoayni\logica\ClienteOrdenCompra.class
 com\aynisac\proyectoayni\igu\VisualizacionPedido$4.class
 com\aynisac\proyectoayni\igu\CumplimientoOC.class
 com\aynisac\proyectoayni\igu\VisualizacionOC.class
 com\aynisac\proyectoayni\igu\VisualizacionPedido$2.class
+com\aynisac\proyectoayni\igu\Principal$8.class
 com\aynisac\proyectoayni\igu\VisualizacionOC$2.class
 com\aynisac\proyectoayni\igu\VisualizacionPresupuesto$3.class
 com\aynisac\proyectoayni\igu\CargaViabilidadPedido$1.class
