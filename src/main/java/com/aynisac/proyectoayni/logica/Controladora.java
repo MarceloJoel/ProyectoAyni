@@ -1,6 +1,5 @@
 package com.aynisac.proyectoayni.logica;
 
-import com.aynisac.proyectoainy.logica.Cliente;
 import com.aynisac.proyectoayni.persistencia.ControladoraPersistencia;
 import java.util.List;
 

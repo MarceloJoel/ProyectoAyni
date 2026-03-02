@@ -1,6 +1,6 @@
 package com.aynisac.proyectoayni.persistencia;
 
-import com.aynisac.proyectoainy.logica.Cliente;
+import com.aynisac.proyectoayni.logica.Cliente;
 import com.aynisac.proyectoayni.persistencia.exceptions.NonexistentEntityException;
 import java.io.Serializable;
 import java.util.List;

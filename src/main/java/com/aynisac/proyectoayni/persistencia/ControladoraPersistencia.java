@@ -1,6 +1,6 @@
 package com.aynisac.proyectoayni.persistencia;
 
-import com.aynisac.proyectoainy.logica.Cliente;
+import com.aynisac.proyectoayni.logica.Cliente;
 import com.aynisac.proyectoayni.logica.ClienteOrdenCompra;
 import com.aynisac.proyectoayni.logica.ClientePresupuesto;
 import com.aynisac.proyectoayni.persistencia.exceptions.NonexistentEntityException;

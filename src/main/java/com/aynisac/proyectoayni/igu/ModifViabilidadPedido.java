@@ -1,6 +1,6 @@
 package com.aynisac.proyectoayni.igu;
 
-import com.aynisac.proyectoainy.logica.Cliente;
+import com.aynisac.proyectoayni.logica.Cliente;
 import com.aynisac.proyectoayni.logica.Controladora;
 import javax.swing.JDialog;
 import javax.swing.JFrame;

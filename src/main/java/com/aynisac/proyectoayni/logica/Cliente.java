@@ -1,4 +1,4 @@
-package com.aynisac.proyectoainy.logica;
+package com.aynisac.proyectoayni.logica;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
