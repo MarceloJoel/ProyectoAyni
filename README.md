@@ -48,3 +48,6 @@ Para conectar el sistema con tu instancia local de **MySQL**:
 <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/proyecto_ayni"/>
 <property name="javax.persistence.jdbc.user" value="root"/>
 <property name="javax.persistence.jdbc.password" value="tu_password"/>
+```
+
+![alt text](image-1.png)
